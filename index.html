@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solstice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f0c;
+      --fg: #f5f9f6;
+      --accent: #00c896;
+      --muted: #9fb5a7;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      background:var(--bg);
+      color:var(--fg);
+      font-family:'Raleway',sans-serif;
+      line-height:1.5;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+    }
+    .site{width:100%;max-width:1200px;display:flex;flex-direction:column;gap:50px}
+    .topbar{
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .mark{width:44px;height:44px;border-radius:12px;background:var(--accent)}
+    .word{font-size:1.2rem;font-weight:700;letter-spacing:1px}
+    .nav-actions{display:flex;gap:12px}
+    .btn-ghost,.btn-primary{
+      padding:10px 20px;border-radius:30px;
+      font-weight:600;text-decoration:none;transition:.2s
+    }
+    .btn-ghost{border:1px solid var(--accent);color:var(--accent);background:transparent}
+    .btn-ghost:hover{background:rgba(0,200,150,0.08)}
+    .btn-primary{background:var(--accent);color:var(--bg)}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .hero{display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:30px}
+    .lead{display:flex;flex-direction:column;gap:20px;max-width:500px}
+    .headline{font-size:clamp(2rem,6vw,2.8rem);font-weight:700;line-height:1.2}
+    .sub{color:var(--muted);font-size:1rem}
+    .lead-ctas{display:flex;gap:16px;flex-wrap:wrap}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:24px}
+    .feature{background:#121713;border-radius:14px;padding:18px}
+    .feature h3{font-size:1rem;margin-bottom:6px;color:var(--accent)}
+    .panel{background:#121713;border-radius:16px;padding:20px;min-height:280px}
+    .mock-graph{background:linear-gradient(to top,var(--accent) 20%,transparent 80%);
+      height:200px;border-radius:10px;opacity:.9}
+    .mock-legend{display:flex;justify-content:space-around;margin-top:14px;font-size:.85rem;color:var(--muted)}
+    footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:40px}
+    /* responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr}}
+    @media (max-width:768px){
+      .topbar{flex-direction:column;align-items:flex-start;gap:14px}
+      .nav-actions{width:100%;justify-content:flex-start;flex-wrap:wrap}
+      .hero{gap:20px}
+      .lead{padding:20px}
+      .headline{font-size:clamp(1.6rem,5vw,2.2rem)}
+      .sub{font-size:.95rem}
+    }
+    @media (max-width:480px){
+      body{padding:20px 12px}
+      .site{max-width:100%}
+      .topbar{flex-direction:column;align-items:center;text-align:center}
+      .brand .word{font-size:1rem}
+      .mark{width:40px;height:40px}
+      .nav-actions{flex-direction:column;align-items:stretch;width:100%}
+      .btn-ghost,.btn-primary{width:100%;text-align:center;font-size:.95rem;padding:10px}
+      .hero{gap:16px}
+      .lead{padding:16px}
+      .headline{font-size:1.4rem}
+      .sub{font-size:.9rem}
+      .lead-ctas{flex-direction:column;gap:10px}
+      .features{grid-template-columns:1fr;gap:12px;margin-top:16px}
+      .feature{padding:14px}
+      .panel{padding:14px}
+      .mock-graph{height:160px}
+      .mock-legend{flex-direction:column;gap:6px;font-size:.85rem}
+      footer{font-size:.8rem;margin-top:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark"></div>
+        <div class="word">Solstice</div>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="btn-ghost">Login</a>
+        <a href="#" class="btn-primary">Get Started</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="lead">
+        <h1 class="headline">Shaping Tomorrow with Solar Intelligence</h1>
+        <p class="sub">Solstice empowers communities by forecasting solar energy and detecting anomalies in household generation data for cleaner, smarter, and more sustainable energy solutions.</p>
+        <div class="lead-ctas">
+          <a href="#" class="btn-primary">Explore More</a>
+          <a href="#" class="btn-ghost">Learn More</a>
+        </div>
+        <div class="features">
+          <div class="feature"><h3>Forecasting</h3><p>Accurate predictions for solar energy generation.</p></div>
+          <div class="feature"><h3>Anomaly Detection</h3><p>Identify and resolve irregularities in energy data.</p></div>
+          <div class="feature"><h3>Sustainability</h3><p>Supporting the shift to renewable energy sources.</p></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="mock-graph"></div>
+        <div class="mock-legend"><span>Today</span><span>Week</span><span>Month</span></div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Solstice. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
